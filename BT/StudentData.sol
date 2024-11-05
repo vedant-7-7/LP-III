@@ -34,9 +34,4 @@ contract StudentData {
     function getTotalStudents() public view returns (uint256) {
         return studentCount;
     }
-
-    // Fallback function
-    fallback() external payable {
-        // Optional: Add logic for fallback if needed
-    }
 }
