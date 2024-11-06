@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract StudentData {
@@ -33,5 +32,14 @@ contract StudentData {
     // Function to get the total number of students
     function getTotalStudents() public view returns (uint256) {
         return studentCount;
+    }
+
+    // Function to get the list of all students
+    function getAllStudents() public view returns (Student[] memory) {
+        Student[] memory allStudents = new Student[](studentCount);
+        for (uint256 i = 1; i <= studentCount; i++) {
+            allStudents[i - 1] = students[i]; // Add each student to the array
+        }
+        return allStudents;
     }
 }
